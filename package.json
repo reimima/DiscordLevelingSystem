@@ -1,0 +1,38 @@
+{
+    "name": "discord-leveling-system",
+    "version": "0.0.0",
+    "description": "Discord leveling system written in discord.js",
+    "main": "src/index.ts",
+    "type": "module",
+    "private": true,
+    "license": "Apache-2.0",
+    "author": "reimima <reimima0916@gmail.com> (https://github.com/reimima)",
+    "homepage": "https://github.com/reimima/DiscordLevelingSystem#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/reimima/DiscordLevelingSystem.git"
+    },
+    "bugs": {
+        "url": "https://github.com/reimima/DiscordLevelingSystem/issues",
+        "email": "reimima0916@gmail.com"
+    },
+    "scripts": {
+        "tsc": "tsc",
+        "start": "bun run src/index.ts",
+        "watch": "bun --watch run start",
+        "lint": "biome check --write src"
+    },
+    "dependencies": {
+        "discord.js": "^14.15.3",
+        "log4js": "6.9.1"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.8.2",
+        "@types/bun": "^1.1.5",
+        "typescript": "^5.5.2"
+    },
+    "packageManager": "bun@1.1.15",
+    "engines": {
+        "bun": ">= 1.1.0"
+    }
+}
