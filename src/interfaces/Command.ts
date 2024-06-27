@@ -1,10 +1,10 @@
-import type { DiscordLevelingSystemBot } from '@/DiscordLevelingSystemBot';
+import type { DiscordLevelingSystem } from '@/DiscordLevelingSystem';
 import type { ApplicationCommandData, Interaction } from 'discord.js';
 import { Structure } from './Structure';
 
 export abstract class Command extends Structure {
     public constructor(
-        protected readonly instance: DiscordLevelingSystemBot,
+        protected readonly instance: DiscordLevelingSystem,
         public readonly data: ApplicationCommandData,
     ) {
         super(data.name);

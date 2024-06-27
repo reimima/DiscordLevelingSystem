@@ -5,8 +5,8 @@ import { Client } from 'discord.js';
 import { configure, getLogger, shutdown } from 'log4js';
 import type { Command, Event } from './interfaces';
 
-export class DiscordLevelingSystemBot extends Client {
-    private readonly logger = getLogger('DiscordLevelingSystemBot');
+export class DiscordLevelingSystem extends Client {
+    private readonly logger = getLogger('DiscordLevelingSystem');
 
     public readonly commands: Map<string, Command> = new Map();
 
@@ -103,20 +103,20 @@ export class DiscordLevelingSystemBot extends Client {
             if (dirent.isFile()) {
                 files.push(resolve(directory, name));
             } else if (dirent.isDirectory()) {
-                this.scanFiles(resolve(directory, name), pattern).map(f => files.push(f));
+                this.scanFiles(resolve(directory, name), pattern).map(file => files.push(file));
             } else {
                 throw new Error(`${name} is neither file nor directory`);
             }
         }
 
-        return files.filter(f => pattern.exec(f));
+        return files.filter(file => pattern.exec(file));
     }
 
     private async loadModules<V>(files: string[]) {
         const modules: V[] = [];
 
         for (const file of files) {
-            const module: { default: new (_instance: DiscordLevelingSystemBot) => V } =
+            const module: { default: new (_instance: DiscordLevelingSystem) => V } =
                 await import(file);
 
             modules.push(new module.default(this));

@@ -1,10 +1,10 @@
-import type { DiscordLevelingSystemBot } from '@/DiscordLevelingSystemBot';
+import type { DiscordLevelingSystem } from '@/DiscordLevelingSystem';
 import type { ClientEvents } from 'discord.js';
 import { Structure } from './Structure';
 
 export abstract class Event<K extends keyof ClientEvents = keyof ClientEvents> extends Structure {
     public constructor(
-        protected readonly instance: DiscordLevelingSystemBot,
+        protected readonly instance: DiscordLevelingSystem,
         public readonly data: Readonly<{
             name: K;
             once?: boolean;

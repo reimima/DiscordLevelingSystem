@@ -1,6 +1,6 @@
-import { DiscordLevelingSystemBot } from './DiscordLevelingSystemBot';
+import { DiscordLevelingSystem } from './DiscordLevelingSystem';
 
-const instance = new DiscordLevelingSystemBot();
+const instance = new DiscordLevelingSystem();
 
 await instance.run();
 

@@ -24,7 +24,9 @@
     },
     "dependencies": {
         "discord.js": "^14.15.3",
-        "log4js": "6.9.1"
+        "kysely": "^0.27.3",
+        "log4js": "6.9.1",
+        "mysql2": "^3.10.1"
     },
     "devDependencies": {
         "@biomejs/biome": "^1.8.2",
